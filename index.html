@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Trainer Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Gym Trainer Website</h1>
+    </header>
+    
+    <main>
+        <section id="adminModule" class="module">
+            <h2>Admin</h2>
+            <form id="adminForm">
+                <!-- Login -->
+                <label for="adminUsername">Username:</label>
+                <input type="text" id="adminUsername" name="adminUsername" required>
+                
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" name="adminPassword" required>
+
+                <button type="button" onclick="adminLogin()">Login</button>
+
+                <!-- Add Member -->
+                <label for="memberName">Member Name:</label>
+                <input type="text" id="memberName" name="memberName" required>
+
+                <label for="memberAge">Member Age:</label>
+                <input type="number" id="memberAge" name="memberAge" required>
+
+                <button type="button" onclick="addMember()">Add Member</button>
+            </form>
+
+            <!-- Update/Delete Members -->
+            <div class="membersList">
+                <h3>Members List</h3>
+                <ul id="membersList"></ul>
+            </div>
+
+            <!-- Create Bills -->
+            <form id="createBillForm">
+                <label for="billAmount">Bill Amount:</label>
+                <input type="number" id="billAmount" name="billAmount" required>
+
+                <button type="button" onclick="createBill()">Create Bill</button>
+            </form>
+
+            <!-- Assign Fee Package -->
+            <form id="assignFeePackageForm">
+                <label for="feePackage">Select Fee Package:</label>
+                <select id="feePackage" name="feePackage">
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                </select>
+
+                <button type="button" onclick="assignFeePackage()">Assign Fee Package</button>
+            </form>
+
+            <!-- Assign Notification for monthly -->
+            <form id="assignNotificationForm">
+                <label for="notificationMessage">Notification Message:</label>
+                <textarea id="notificationMessage" name="notificationMessage" required></textarea>
+
+                <button type="button" onclick="assignNotification()">Assign Notification</button>
+            </form>
+
+            <!-- Report export -->
+            <button type="button" onclick="exportReport()">Export Report</button>
+
+            <!-- Supplement store -->
+            <div class="supplementStore">
+                <h3>Supplement Store</h3>
+                <ul id="supplementStore"></ul>
+            </div>
+
+            <!-- Diet Details -->
+            <form id="dietDetailsForm">
+                <label for="dietDetails">Diet Details:</label>
+                <textarea id="dietDetails" name="dietDetails" required></textarea>
+
+                <button type="button" onclick="submitDietDetails()">Submit Diet Details</button>
+            </form>
+        </section>
+
+        <section id="memberModule" class="module">
+            <h2>Member</h2>
+            <form id="memberLogin">
+                <label for="memberLoginUsername">Username:</label>
+                <input type="text" id="memberLoginUsername" name="memberLoginUsername" required>
+
+                <label for="memberLoginPassword">Password:</label>
+                <input type="password" id="memberLoginPassword" name="memberLoginPassword" required>
+
+                <button type="button" onclick="memberLogin()">Login</button>
+            </form>
+
+            <!-- View Bill Receipts -->
+            <div class="billReceipts">
+                <h3>Bill Receipts</h3>
+                <ul id="billReceipts"></ul>
+            </div>
+
+            <!-- View Bill Notification -->
+            <div class="billNotifications">
+                <h3>Bill Notifications</h3>
+                <ul id="billNotifications"></ul>
+            </div>
+        </section>
+
+        <section id="userModule" class="module">
+            <h2>User</h2>
+            <form id="userLogin">
+                <label for="userLoginUsername">Username:</label>
+                <input type="text" id="userLoginUsername" name="userLoginUsername" required>
+
+                <label for="userLoginPassword">Password:</label>
+                <input type="password" id="userLoginPassword" name="userLoginPassword" required>
+
+                <button type="button" onclick="userLogin()">Login</button>
+            </form>
+
+            <!-- View Details -->
+            <div class="userDetails">
+                <h3>User Details</h3>
+                <ul id="userDetails"></ul>
+            </div>
+
+            <!-- Search Records -->
+            <form id="searchRecordsForm">
+                <label for="searchKeyword">Search Keyword:</label>
+                <input type="text" id="searchKeyword" name="searchKeyword" required>
+
+                <button type="button" onclick="searchRecords()">Search</button>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
